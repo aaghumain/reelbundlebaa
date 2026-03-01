@@ -35,7 +35,7 @@ margin-top:10px;
 }
 
 h1{
-font-size:42px;
+font-size:40px;
 margin:10px 0;
 }
 
@@ -63,7 +63,6 @@ box-shadow:0 15px 40px rgba(0,0,0,0.5);
 }
 
 .timer{
-
 margin-top:20px;
 background:#ff0033;
 padding:14px;
@@ -71,7 +70,6 @@ border-radius:10px;
 font-size:24px;
 font-weight:bold;
 display:inline-block;
-
 }
 
 .cta{
@@ -86,11 +84,15 @@ font-weight:bold;
 border-radius:60px;
 text-decoration:none;
 
+animation:pulse 1.5s infinite;
+
 }
 
-.cta:hover{
+@keyframes pulse{
 
-transform:scale(1.07);
+0%{transform:scale(1);}
+50%{transform:scale(1.07);}
+100%{transform:scale(1);}
 
 }
 
@@ -131,46 +133,51 @@ opacity:.7;
 
 }
 
+.livebox{
+
+margin-top:10px;
+font-size:18px;
+background:rgba(255,255,255,0.15);
+padding:12px;
+border-radius:10px;
+display:inline-block;
+
+}
+
+.trust{
+
+margin-top:15px;
+font-size:16px;
+opacity:.9;
+
+}
+
 </style>
 
 </head>
-<script>
 
-setInterval(function(){
-
-var random = Math.floor(Math.random()*40)+120;
-
-document.getElementById("users").innerHTML=random;
-
-},3000);
-
-</script>
 <body>
 
 <div class="container">
 
 
 <div class="badge">
-
 🔥 Limited Free Access
-
 </div>
 
 
 <h1>
-
 400,000+ Viral Reels Bundle FREE
-
 </h1>
 
 
 <p class="sub">
 
-Get access to <span class="highlight">4 Lakh+ Viral Reels</span>
+Download <span class="highlight">4 Lakh+ Viral Reels</span>
 
-including AI Reels, Car Reels, Luxury Reels,
+AI Reels • Luxury Reels • Car Reels • Business Reels
 
-Business Reels + Premium Canva Templates.
++ Premium Canva Templates
 
 </p>
 
@@ -181,6 +188,8 @@ Business Reels + Premium Canva Templates.
 <img src="reelbundle.jpg">
 
 </div>
+
+
 
 <div style="margin-top:20px;
 font-size:20px;
@@ -193,36 +202,43 @@ margin-left:auto;
 margin-right:auto;">
 
 🔥 400,000+ Viral Reels <br>
-
 🔥 AI + Luxury + Car Reels <br>
-
 🔥 Premium Canva Templates <br>
-
 🔥 Instant Download
 
 </div>
+
+
 
 <div class="timer">
 
 ⏳ Free Access Ends In:
 
 <span id="countdown">
-
 03:00
-
 </span>
 
 </div>
 
 
+<div class="livebox">
 
-<br>
+🔥 <span id="users">134</span> people downloading now
+
+</div>
+
+
+<div class="trust">
+
+⭐ 128,000+ Creators Downloaded
+
+</div>
 
 
 
 <a class="cta" href="https://shrinkme.click/WlSDk">
 
-⬇ DOWNLOAD 400K BUNDLE
+⬇ DOWNLOAD NOW
 
 </a>
 
@@ -230,7 +246,7 @@ margin-right:auto;">
 
 <div class="warning">
 
-⚠ Only Limited Free Downloads Available
+⚠ Offer expires soon
 
 </div>
 
@@ -286,7 +302,6 @@ margin-right:auto;">
 </div>
 
 
-
 <script>
 
 var time = 180;
@@ -294,19 +309,15 @@ var time = 180;
 setInterval(function(){
 
 var minutes=Math.floor(time/60);
-
 var seconds=time%60;
 
 document.getElementById("countdown").innerHTML=
-
 minutes+":"+(seconds<10?"0":"")+seconds;
 
 time--;
 
 if(time<0){
-
 time=180;
-
 }
 
 },1000);
@@ -314,8 +325,22 @@ time=180;
 </script>
 
 
+<script>
+
+setInterval(function(){
+
+var random = Math.floor(Math.random()*40)+120;
+
+var element=document.getElementById("users");
+
+if(element){
+element.innerHTML=random;
+}
+
+},3000);
+
+</script>
+
+
 </body>
-
 </html>
-
-
