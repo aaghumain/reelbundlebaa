@@ -134,7 +134,17 @@ opacity:.7;
 </style>
 
 </head>
+<script>
 
+setInterval(function(){
+
+var random = Math.floor(Math.random()*40)+120;
+
+document.getElementById("users").innerHTML=random;
+
+},3000);
+
+</script>
 <body>
 
 <div class="container">
@@ -307,4 +317,5 @@ time=180;
 </body>
 
 </html>
+
 
